@@ -13,8 +13,8 @@ framework for developing apps powered by LLMs
  >  6. **LangChain Core**: Protocol
                     LCEL - LangChain Expression Language
 
-# **Frameworks, Libraries, Tools: **
+# Frameworks, Libraries, Tools:
  <ol>
-  <li>**Ollama**: to run LLM on local servers (aka. DockerForLLMs)</li>
-  <li>**Streamlit**: to turn DS,ML apps into web applications</li>
+  <li>Ollama: to run LLM on local servers (aka. DockerForLLMs)</li>
+  <li>Streamlit: to turn DS,ML apps into web applications</li>
  </ol>
