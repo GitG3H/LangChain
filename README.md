@@ -15,6 +15,8 @@ framework for developing apps powered by LLMs
 
 # Frameworks, Libraries, Tools:
  <ol>
-  <li>Ollama: to run LLM on local servers (aka. DockerForLLMs)</li>
-  <li>Streamlit: to turn DS,ML apps into web applications</li>
+  <li>Ollama: (Omni-Layer Learning Language Acquisition Model),
+      to run LLM on local servers (aka. DockerForLLMs), supports various libraries such as LLama2, Mistral, Dolphin Phi, LLaVa (Cmd: "ollama run modelname") </li>
+  <li>Streamlit: to turn DS, ML apps into web applications (cmd: "streamlit run filename.py") </li>
+  <li> </li>
  </ol>
