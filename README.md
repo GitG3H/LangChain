@@ -1,7 +1,7 @@
 # LangChain
 framework for developing apps powered by LLMs
 
->##LangChain Ecosystem:
+# **LangChain Ecosystem:**
  >    1. **LangSmith**: for observability
  >    2. **LangServe**: for deploying chains as APIs
  >    3. **Templates**: Reference Applications
