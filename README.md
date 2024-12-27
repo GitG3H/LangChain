@@ -21,3 +21,6 @@ framework for developing apps powered by LLMs
   <li>Fast API: to perform production-grade deployment of LLM as API. Perform Swagger UI Documentation.</li>
   <li>Uvicorn: an Asynchronous Server Gateway Interface (ASGI) Server which acts as binding element that handles web connections from browser or api client and then allows FastAPI to serve actual request (cmd: uvicorn.run())  </li>
  </ol>
+
+ # RAG Pipeline using LangChain Chromadb and FAISS
+![RAG](https://github.com/user-attachments/assets/5ead9382-0ec4-40d8-bc4f-a512b7572b62)
