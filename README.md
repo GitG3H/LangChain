@@ -31,11 +31,12 @@ framework for developing apps powered by LLMs
 ![RAG](https://github.com/user-attachments/assets/5ead9382-0ec4-40d8-bc4f-a512b7572b62)
 
 Libraries/Modules imported: 
-1. langchain_community.document_loaders -> to load text, pdf, web documents.
+1. langchain_community.document_loaders -> to load text, pdf, web documents. (TextLoader, WebBaseLoader, PyPDFLoader) (function: loader.load())
 2. bs4 -> to extract data from HTML, XML files(web scraping).
-3. langchain.text_splitter -> to split into chunks.
-4. langchain_community.vectorstores -> Chroma (ease of use, versatile, full-featured db capabilities), FAISS by Meta (large-scale, high performance, GPU-accelerated)
-5. langchain_community.embeddings -> OpenAIEmbeddings (advanced, better performance)/OllamaEmbeddings : converts text into numerical vectors for tasks like similarity search, clustering, NLP. 
+3. langchain.text_splitter -> to split into chunks. (RecursiveCharacterTextSplitter(), RCTS.split_documents())
+4. langchain_community.vectorstores -> Chroma (ease of use, versatile, full-featured db capabilities),
+                                    -> FAISS by Meta (large-scale, high performance, GPU-accelerated) (FAISS.from_documents(docs,embeddings))
+6. langchain_community.embeddings -> OpenAIEmbeddings (advanced, better performance)/OllamaEmbeddings : converts text into numerical vectors for tasks like similarity search, clustering, NLP. 
 
 # Advanced RAG Q&A Chatbot with Chain and Retrievers using LangChain.
 
@@ -53,7 +54,7 @@ Retrieval Chain: This chain takes user inquiry, which is then passed to retrieve
 ![Retriever_Chain_LCEL](https://github.com/user-attachments/assets/8f2f9dfa-fec8-4c30-9105-645a140cf2aa)
 
 Libraries/Modules imported:
-1. langchain.chains.combine_documents -> create_stuff_documents_chain, 
+1. langchain.chains.combine_documents -> create_stuff_documents_chain
 2. langchain.chains-> create_retrieval_chain
 3. Other: OS, Ollama, prompts, chat_models, streamlit, requests.
 
@@ -67,14 +68,25 @@ Libraries/Modules imported:
 Libraries/Modules imported:
 1. langchain_community.tools -> WikipediaQueryRun, ArxivQueryRun
 2. langchain_community.utilities -> WikipediaAPIWrapper, ArxivAPIWrapper
-3. langchain_openai -> OpenAIEmbeddings 
-4. langchain_community.document_loaders -> WebBaseLoader (loader.load())
-5. langchain_text_splitters -> RecursiveCharacterTextSplitter (RCTS.split_documents())
-6. langchain_community.vectorstores -> FAISS (FAISS.from_documents(docs,OpenAIEmbeddings()), vectordb.as_retriever())
-7. langchain.tools.retriever -> create_retriever_tool()
-8. langchain.agents -> create_openai_tools_agent(llm model to use, sequence of tools, prompt), AgentExecutor.invoke({"input"})
-9. langchain.hub -> hub.pull()  (all publicly listed prompts are available in hub)
-
+3. langchain.tools.retriever -> create_retriever_tool()
+4. langchain.agents -> create_openai_tools_agent(llm model to use, sequence of tools, prompt), AgentExecutor.invoke({"input"})
+5. langchain.hub -> hub.pull()  (all publicly listed prompts are available in hub)
+6. Other: OpenAIEmbeddings, WebBaseLoader, RecursiveCharacterTextSplitter, FAISS
 
 # E2E Advanced RAG project using Open Source LLM models and Groq Inferencing Engine
 1. Groq LPU Inference Engine: Groq is an AI Inference company. It uses LPU (Language Processing Unit) that overcomes 2 LLM bottlenecks (Compute density, memory bandwidth).
+
+Libraries/Modules imported:
+1. langchain_groq -> ChatGroq 
+2. langchain_core.prompts -> ChatPromptTemplate
+3. Other: streamlit, os, WebBaseLoader, OllamaEmbeddings, RecursiveCharacterTextSplitter, create_stuff_documents_chain, create_retrieval_chain, FAISS, time
+
+Steps:
+1) Load Groq API Key
+2) Define/Set Configurations for Streamlit Session State Variables.         st.session_state.(embeddings, loader, docs,text_splitter, final_documents,vectors)
+3) Set title for Streamlit app
+4) Define llm and pass parameters (llm=ChatGroq(groq_api_key, model_name))
+5) Define base prompt and provide placeholders for context and input so that user can type these in UI.
+6) Create a document_chain(llm,prompt) and retriever then pass them into retrieval_chain.
+7) Additionally you can capture the process_time to check how much time the model is taking to retreive the info.
+   
