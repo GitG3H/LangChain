@@ -56,3 +56,25 @@ Libraries/Modules imported:
 1. langchain.chains.combine_documents -> create_stuff_documents_chain, 
 2. langchain.chains-> create_retrieval_chain
 3. Other: OS, Ollama, prompts, chat_models, streamlit, requests.
+
+# Advanced RAG Q&A with multiple data sources with LangChain
+1. Tools: Interfaces that an agent, chain, or LLM can use to interact with the world. E.g. ArXiv, AWS Lambda, Bing Search, ChatGPT Plugins, Google Lens etc.
+   They are wrapped in toolkit.
+2. Agent: an AI system that uses LLM to control an application's flow & interact with tools to perform tasks or answer questions.
+3. AgentExecutor: Runtime for an agent that calls the agent, execute actions it chooses, passes action outputs back to agent and repeats. i.e. it implements standard Runnable interface  
+4. LangChain Hub: an extension from LangSmith Studio environment that lets you discover, share and version control prompts which are listed publicly.
+
+Libraries/Modules imported:
+1. langchain_community.tools -> WikipediaQueryRun, ArxivQueryRun
+2. langchain_community.utilities -> WikipediaAPIWrapper, ArxivAPIWrapper
+3. langchain_openai -> OpenAIEmbeddings 
+4. langchain_community.document_loaders -> WebBaseLoader (loader.load())
+5. langchain_text_splitters -> RecursiveCharacterTextSplitter (RCTS.split_documents())
+6. langchain_community.vectorstores -> FAISS (FAISS.from_documents(docs,OpenAIEmbeddings()), vectordb.as_retriever())
+7. langchain.tools.retriever -> create_retriever_tool()
+8. langchain.agents -> create_openai_tools_agent(llm model to use, sequence of tools, prompt), AgentExecutor.invoke({"input"})
+9. langchain.hub -> hub.pull()  (all publicly listed prompts are available in hub)
+
+
+# E2E Advanced RAG project using Open Source LLM models and Groq Inferencing Engine
+1. Groq LPU Inference Engine: Groq is an AI Inference company. It uses LPU (Language Processing Unit) that overcomes 2 LLM bottlenecks (Compute density, memory bandwidth).
