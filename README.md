@@ -29,6 +29,7 @@ framework for developing apps powered by LLMs
 
  # RAG Pipeline using LangChain Chromadb and FAISS vector databases.
 ![RAG](https://github.com/user-attachments/assets/5ead9382-0ec4-40d8-bc4f-a512b7572b62)
+
 Libraries/Modules imported: 
 1. langchain_community.document_loaders -> to load text, pdf, web documents.
 2. bs4 -> to extract data from HTML, XML files(web scraping).
@@ -44,12 +45,12 @@ Reasons to use chains:
 2. Add state and memory (Output of one call is fed as input to next call to provide context)
 3. Add processing logic between calls (Eg: Additional processing, filtering, validation)
 4. Debug and instrument.
-![Retriever_Chain_LCEL](https://github.com/user-attachments/assets/8f2f9dfa-fec8-4c30-9105-645a140cf2aa)
-
 Useful chains: create_stuff_documents_chain, create_retrieval_chain, create_sql_query_chain
 
 Retriever: An interface that returns documents given an unstructured query. (cmd: db.as_retriever())
 Retrieval Chain: This chain takes user inquiry, which is then passed to retriever to fetch relevant documents. (cmd: create_retrieval_chain(), invoke())
+
+![Retriever_Chain_LCEL](https://github.com/user-attachments/assets/8f2f9dfa-fec8-4c30-9105-645a140cf2aa)
 
 Libraries/Modules imported:
 1. langchain.chains.combine_documents -> create_stuff_documents_chain, 
