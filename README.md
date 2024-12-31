@@ -90,3 +90,22 @@ Steps:
 6) Create a document_chain(llm,prompt) and retriever then pass them into retrieval_chain.
 7) Additionally you can capture the process_time to check how much time the model is taking to retreive the info.
    
+# Gen AI powered app using LangChain + HuggingFace + Mistral
+
+Libraries/Modules imported: 
+1) langchain_community.embeddings -> HuggingFaceBgeEmbeddings
+2) langchain.chains -> RetrievalQA
+3) langchain_community.llms -> HuggingFaceHub
+4)Other: PyPDFLoader, PyPDFDirectoryLoader, RecursiveCharacterTextSplitter, FAISS, numpy, PromptTemplate,
+
+Steps: 
+1) Read pdfs from loader and split the documents. (loader.load(), RCTS(), split_documents())
+2) Specify parameters for Huggingface_embeddings. (model_name, kwargs)
+3) Embed page content of first document to hugging face embeddings and convert to array (.embed_query(), np.array().shape)
+4) Creates a FAISS vector store from first few documents of final_documents using huggingface_embeddings. (FAISS.from_documents())
+5) Provide a query and fetch content from relevant documents using similarity_search, then use as_retriever
+6) Call required models from hugging face hub, provide a query and invoke it. (hf.invoke(query))
+   Note: to run models locally use HFPipeline instead of HFHub.
+7) Create a prompt with prompt template (context, question) and invoke it.
+
+9) 
