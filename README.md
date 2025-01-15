@@ -14,6 +14,8 @@ framework for developing apps powered by LLMs.
                     LCEL - LangChain Expression Language
 
 ![Langchain](https://github.com/user-attachments/assets/a1f99271-f914-41f3-9a9d-9dee10483c1d)
+![2-3](https://github.com/user-attachments/assets/8dc0af25-769c-42f9-a0c0-6d5b7c430114)
+![3-3](https://github.com/user-attachments/assets/cdf5526c-0f2a-46c3-b796-244578c063b5)
 
  # Building Chatbot using paid & open source LLMs using LangChain and Ollama
  Libraries/Modules imported: 
