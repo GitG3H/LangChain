@@ -1,5 +1,5 @@
 # LangChain
-framework for developing apps powered by LLMs
+framework for developing apps powered by LLMs.
 
 # **LangChain Ecosystem:**
  >    1. **LangSmith**: for observability
@@ -12,6 +12,8 @@ framework for developing apps powered by LLMs
                     Agent Tooling
  >    6. **LangChain Core**: Protocol
                     LCEL - LangChain Expression Language
+
+![Langchain](https://github.com/user-attachments/assets/a1f99271-f914-41f3-9a9d-9dee10483c1d)
 
  # Building Chatbot using paid & open source LLMs using LangChain and Ollama
  Libraries/Modules imported: 
